@@ -1,0 +1,34 @@
+//Number 4
+function checkPassword() {
+    var password = document.convert("password").value;
+    var message = "";
+
+    if (password.length < 8) {
+        message = "Password too short! It must be at least 8 characters.";
+    }
+    else if (password == password.toLowerCase()) {
+        message = "Password must contain at least one UPPERCASE letter.";
+    }
+    else if (password == password.toUpperCase()) {
+        message = "Password must contain at least one lowercase letter.";
+    }
+    else if (
+        password.indexOf("0") == -1 &&
+        password.indexOf("1") == -1 &&
+        password.indexOf("2") == -1 &&
+        password.indexOf("3") == -1 &&
+        password.indexOf("4") == -1 &&
+        password.indexOf("5") == -1 &&
+        password.indexOf("6") == -1 &&
+        password.indexOf("7") == -1 &&
+        password.indexOf("8") == -1 &&
+        password.indexOf("9") == -1
+    ) {
+        message = "Password must contain at least one number.";
+    }
+    else {
+        message = "Password is strong!";
+    }
+
+    document.getElementById("result").innerHTML = message;
+}
